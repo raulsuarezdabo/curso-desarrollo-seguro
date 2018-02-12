@@ -1,0 +1,19 @@
+#==================================================
+#
+# Systemd Service.
+# This file should be placed at /etc/systemd/system/
+# Usage: systemctl enable/disable/start/stop/restart/status <service>
+#
+#==================================================
+
+[Unit]
+Description=curso-desarrollo-seguro
+After=syslog.target
+
+[Service]
+User=nobody
+ExecStart=/usr/bin/java -jar /opt/curso-desarrollo-seguro/curso-desarrollo-seguro.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

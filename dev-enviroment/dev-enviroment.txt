@@ -1,0 +1,54 @@
+Java
+	
+	apt-get update && apt-get install default-jdk
+	
+	
+Eclipse
+	
+	cd /opt
+	wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/2/eclipse-jee-oxygen-2-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
+	tar -xvzf eclipse.tar.gz && rm eclipse.tar.gz
+	
+	echo "SWT_GTK3=0" >> /etc/enviroment
+	reboot
+	
+	vim ~/.local/share/applications/opt_eclipse.desktop
+	
+[Desktop Entry]
+Type=Application
+Name=Eclipse
+Comment=Eclipse Integrated Development Environment
+Icon=/opt/eclipse/icon.xpm
+Exec=/opt/eclipse/eclipse
+Terminal=false
+Categories=Development;IDE;Java;
+StartupWMClass=Eclipse
+	
+	chmod +x ~/.local/share/applications/opt_eclipse.desktop
+	nautilus ~/.local/share/applications
+	
+	
+MySQL
+	
+	apt-get update && apt-get install mysql-server
+	mysql_secure_installation
+	
+	
+MySQL Workbench
+	
+	apt-get update && apt-get install mysql-workbench
+	
+	
+Nginx
+	
+	apt-get update && apt-get install nginx
+    apt-get update && apt-get install nginx-extras
+	
+    
+TestSSL
+    
+    apt-get install git
+    cd /opt
+    git clone --depth 1 https://github.com/drwetter/testssl.sh.git
+    
+    
